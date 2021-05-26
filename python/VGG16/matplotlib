@@ -1,0 +1,9 @@
+from matplotlib import image as mpimg
+from matplotlib import pyplot as plt
+import numpy as np
+#matplotlib inline
+
+img1 = mpimg.imread('cat.jpg')
+plt.imshow(img1)
+type(img1)
+

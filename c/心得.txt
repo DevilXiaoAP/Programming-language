@@ -1,0 +1,22 @@
+
+1.如何创建一个简单的c程序：新建win32 console application-一个空工程-C++ source file
+--------------------Configuration: 1 - Win32 Debug-------------------注意创建工程的时候保证是在VC++的目录下创建的否则编译的时候会有问题
+2.C++错误unresolved external symbol _WinMain@16 
+这个文件中使用了WinMian而不是main作为入口函数。vc这时的默认设置是针对控制台程序的。 
+解决方法：
+1.进入project->setting->c/c++, 在category(第一行)中选择preprocessor,在processor definitions中删除_WINDOWS, 添加_CONSOLE
+
+2.进入project->setting->Link, 在Project options中将/subsystem:windows.改为/subsystem:conso
+自动排序方法 ctrl+a全选然后alt+F8
+
+unresolved external symbol_main
+这类错误是编译器找不到指定的符号定义。它是在连接的时候出现的，有两种可能：
+1、你写的这个函数只有省名，没有定义。
+2、这个函数是动态连接库导出的函数，而你没有连接它的lib库文件可以用“#pragma comment(lib, "那个库.lib")”编译命令或设置VC的lib文件路径。
+
+i++与++i
+都是i=i+1的意思，区别在于i++是i先不自加，在语句完后自加，++i先自加；列如a=1+i++；i本来为1的话，这里a=1+1；语句完后i才加1为2；
+a=1+++i的话就先i=i+1；i=2.然后a=i+1，a=3
+
+注意在执行exe对话框程序的时候的大小写
+

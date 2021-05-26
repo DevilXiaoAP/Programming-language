@@ -1,0 +1,485 @@
+1.sin函数
+#include <stdio.h>
+#include <math.h>
+void main()
+{
+ double x,s;
+ printf("input number:\n");
+ scanf("%if",&x);
+ s = sin(x);
+ printf("sin of %if is %if\n",x,s);
+}
+2.最大值判断
+int max(int a,int b);
+main()
+{
+   int x,y,z;
+   int max(int a,int b);
+   printf("input two numbers:\n");
+   scanf("%d%d",&x,&y);
+   z=max(x,y);
+   printf("maxmun=%d",z);
+
+}
+int max(int a,int b)
+{
+ if(a>b)return a;else return b;
+}
+3.价格计算
+#include <stdio.h>
+#define PRICE 30;
+void main()
+{
+ int num,total;
+ num=10;
+ total =num*PRICE;
+ printf("total=%d\n",total);
+} 
+4.字节大小
+#include <stdio.h>
+void main()
+{
+   printf("%d\n",sizeof(int));
+}
+5.定义变量
+#include <stdio.h>
+void main()
+{
+ int a,b,c,d;
+ unsigned u;
+ a=12;
+ b=-24;
+ u=10;
+ c=a+u;
+ d=b+u;
+ printf("%d+%d=%d,%d+%d=%d\n",a,u,c,b,u,d);
+}
+6.数字的溢出
+#include <stdio.h>
+void main()
+{
+short int a,b;
+ a=32767;
+ b=a+1;
+ printf("%d,%d\n",a,b);
+}
+7.误差
+#include <stdio.h>
+void main()
+{
+ float a,b;
+ a=123456.789e5;
+ b=a*20;
+ printf("%f\n",a);
+ printf("%f\n",b);
+
+}
+8.ASSIC码简单实用
+#include <stdio.h>
+void main()
+{
+  int a,b,c;
+  a=5;b=6;c=7;
+  printf("ab c\tde\r\n");
+  printf("\tL\bM\a\n");
+
+}
+4.8
+#include <stdio.h>
+void main()
+{ 
+ int a,b;
+ printf("input character a and b:\n");
+ scanf("%c %c",&a,&b);
+ printf("%c %c\n",a,b);
+}
+4.10#include <stdio.h>
+void main()
+{ 
+ int a;
+printf("input a number\n");
+ scanf("%ld",&a);
+     printf("%ld",a);
+}
+4.12输入三个小写字母输出其ascii码和对应的大写字母，
+#include <stdio.h>
+void main()
+{ 
+ char a,b,c;
+ printf("inpur character a,b,c\n");
+ scanf("%c %c %c",&a,&b,&c);
+ printf("%d,%d,%d\n%c,%c,%c\n",a,b,c,a-32,b-32,c-32);
+}
+4.13输出各种数据类型的字节长度。
+#include <stdio.h>
+void main()
+{ 
+ int a;
+ long b;
+ float f;
+ double d;
+ char c;
+ printf("\nint:%d\nlong:%d\nfloat;%d\ndouble:%d\nchar:%d\n",sizeof(a),sizeof(b),sizeof(f),sizeof(d),sizeof(c));
+}
+4.14求三角形面积
+#include <stdio.h>
+#include <math.h>
+
+void main()
+{
+   double a,b,c,s,area;
+  
+   scanf("%lf %lf %lf",&a,&b,&c);
+   s= 1.0/2*(a+b+c);
+   area=sqrt(s*(s-a)*(s-b)*(s-c));
+   printf("a=%lf,b=%lf,c=%lf,s=%f\n",a,b,c,s);
+   printf("area=%lf\n",area);
+}
+4.15求二元方程的根
+#include <stdio.h>
+#include <math.h>
+
+void main()
+{
+   double a,b,c,disc,x1,x2,p,q;
+   scanf("a=%lf,b=%lf,c=%lf",&a,&b,&c);
+   disc=b*b-4*a*c;
+   p=-b/(2*a);
+   q=sqrt(disc)/(2*a);
+   x1=p+q;
+   x2=p-q;
+   printf("\nx1=%5.2lf\nx2=%5.2lf\n",x1,x2);
+}
+5.1关系表达式
+#include <stdio.h>
+void main()
+{
+  char c='k';
+  int i=1,j=2,k=3;
+  float x=3e+5,y=0.85;
+  printf("%d,%d\n",'a'+5<c,-i*j>=k+1);
+  printf("%d,%d\n",1<j<5,x-5.25<=x+y);/*    */
+  printf("%d,%d\n",i+j+k==-2*j,k==j==i+5);    //后一个先计算k==j返回0，在计算0==i+5；返回0
+}
+5.2#include <stdio.h>
+void main()
+{
+  char c='k';
+  int i=1,j=2,k=3;
+  float x=3e+5,y=0.85;
+  printf("%d,%d\n",!x*!y,!!!x);
+  printf("%d,%d\n",x||i&&j-3,i<j&&x<y);
+  printf("%d,%d\n",i==5&&c&&(j=8),x+y||i+j+k);    
+}
+5.3比较大小
+#include <stdio.h>
+void main()
+{
+  int a,b,max;
+  printf("\n input two numbers: ");
+  scanf("%d %d",&a,&b);
+  max=a;
+  if(max<b)
+  {
+   max=b;
+  }
+  printf("max = %d",max);
+}
+#include <stdio.h>
+void main()
+{
+  int a,b;
+  printf("\n input two numbers: ");
+  scanf("%d %d",&a,&b);
+  if(a>b)
+  {
+   printf("max = %d\n",a);
+  }
+  else
+   printf("max = %d\n",b);
+}
+5.5判断字符类型
+#include <stdio.h>
+void main()
+{
+  char c;
+  printf("input a character: ");
+  c=getchar();
+  if(c<32) printf("This is a control character\n");
+  else if(c>='0'&&c<='9') printf("this is a digit\n");
+  else if(c>='A'&&c<='Z') printf("this is a capital letter\n");
+  else if(c>='a'&&c<='z') printf("this is a small lrtter\n");
+  else printf("this is an other character\n");
+}
+补充1，判断分数
+#include <stdio.h>
+void main()
+{
+ int score;
+ printf("please input a score: \n");
+ scanf("%d",&score);
+ if(score<0||score>100)
+ {
+  printf("this is a fall socre!");
+ }
+ if(score<60)
+ {
+  printf("the score is E!");
+ }
+ else if((score>60||score==60)&&score<70)
+ {
+  printf("the score is D!");
+ }
+ else if((score>70||score==70)&&score<80)
+  {
+  printf("the score is C!");
+ }
+  else if((score>80||score==80)&&score<90)
+  {
+  printf("the score is B!");
+ }
+  else
+  {
+   printf("the score is A!");
+  }
+}
+补充2，判断三个数大小
+#include <stdio.h>
+void main()
+{
+  int a,b,c,temp;
+  printf("please input three numbers: \n");
+  scanf("%d%d%d",&a,&b,&c);
+  if(a>b)
+  {
+   temp = a;
+   a = b;
+   b = temp;
+  }
+  if(a>c)
+  {
+   temp = a;
+   a = c;
+   c = temp;
+  }
+  if( b > c)
+  {
+   temp = b;
+   b = c;
+   c = temp;
+  }
+  printf("the number form small to big is %d %d %d",a,b,c);
+}
+5.6IF语句的嵌套
+#include <stdio.h>
+void main()
+{
+ int a,b;
+ printf("please input A,B: ");
+ scanf("%d%d",&a,&b);
+ if(a!=b)
+	 if(a>b)
+	 {
+	  printf("A>B\n");
+	 }
+	 else 
+	 {
+	  printf("A<B\n");
+	 }
+ else
+ {
+  printf("A=B\n");
+ }
+}
+#include <stdio.h>
+void main()
+{
+ int a,b;
+ printf("please input A,B: ");
+ scanf("%d%d",&a,&b);
+ if(a==b) printf("A=B\n");
+ else if(a>b)  printf("A>B\n");
+ else  printf("A<B\n");	
+}
+5.8条件运算符
+#include <stdio.h>
+void main()
+{
+ int a,b,max;
+ printf("\n input two numbers: ");
+ scanf("%d%d",&a,&b);
+ printf("max=%d",a>b?a:b);
+}
+补充，输入字符判断是否为大写字母，若是则转化为小写字母
+#include <stdio.h>
+void main()
+{
+ char ch;
+ printf("please input a character: ");
+ scanf("%c",&ch);
+ ch=(ch>='A'&&ch<='Z')?ch+32:ch;
+ printf("%c\n",ch);
+}
+4.10
+#include <stdio.h>
+void main()
+{
+ int a;
+ printf("input integer number:  ");
+ scanf("%d",&a);
+ switch(a>1?2:3)//括号里是表达式
+ {
+  case 1:printf("Monday\n");break;
+  case 2:printf("Tuesday\n");break;
+  case 3:printf("Wednesday\n");break;
+  case 4:printf("Thursday\n");break;
+  case 5:printf("Friday\n");break;
+  case 6:printf("Saturday\n");break;
+  case 7:printf("Sunday\n");break;
+  default:printf("error\n");
+ }
+}
+4.11输入三个整数，输出最大数和最小数
+#include <stdio.h>
+void main()
+{
+ int a,b,c,max,min;
+ printf("input three numbers: ");
+ scanf("%d%d%d",&a,&b,&c);
+ if(a>b)
+ {
+  max=a;
+  min=b;
+ }
+ else
+ {
+  max=b;
+  max=a;
+ }
+ if(max<c)
+ {
+  max=c;
+ }
+ else  if(min>c)
+	 {
+	  min=c;
+	 }
+printf("max = %d,min = %d",max,min);
+}
+4.12计算器程序
+#include <stdio.h>
+void main()
+{
+ double a,b;
+ char c;
+ printf("input expression:a+(-*/)b \n");
+ scanf("%lf%c%lf",&a,&c,&b);
+ switch(c)
+ {
+ case '+':
+	 printf("%lf",a+b);
+	 break;
+ case '-':
+	 printf("%lf",a-b);break;
+ case '/':
+	 printf("%lf",a/b);break;
+ case '*':
+	 printf("%lf",a*b);break;
+ default:printf("input error!");
+ }
+}
+作业，输入一个年份判断是否是闰年；
+#include <stdio.h>
+void main()
+{
+	int a;
+	printf("please input a number: ");
+	scanf("%d",&a);
+	
+	if((a%100==0&&a%400==0)||(a%4==0&&a&100!=0))
+	{
+		printf("this year is lee!");
+	}
+	else
+		printf("this year is not lee!");
+}
+#include <stdio.h>
+void main()
+{
+	int year,leap;//leap是判断闰年的标志，1为闰年，0为非闰年
+	scanf("%d",&year);
+	if( year%4 == 0)
+	{
+		if(year%100==0)
+			if(year%400==0)
+			{
+				leap=1;
+			}
+			else
+			{
+				leap=0;
+			}
+	}
+	else
+	{
+		leap=0;
+	}
+	if(leap)
+	{
+		printf("%d is ",year);
+	}
+	else
+	{
+		printf("%d is not ",year);
+	}
+		printf("a leap year.\n");
+}
+计算运费
+#include <stdio.h>
+void main()
+{
+	int c,s;
+	float p,w,d,f;
+	scanf("%f%f%d",&p,&w,&s);
+	if(s>=3000)
+	{
+		c=12;
+	}
+	else
+	{
+		c=s/250;	 
+	}
+	switch(c)
+	{
+	case 0:
+		d=0;
+		break;
+	case 1:
+		d=2;
+		break;
+	case 2:
+	case 3:
+		d=5;
+		break;
+	case 4:
+	case 5:
+	case 6:
+	case 7:
+		d=8;
+		break;
+	case 8:
+	case 9:
+	case 10:
+	case 11:
+		d=10;
+		break;
+	case 12:
+		d=15;
+		break;
+			
+	}
+	f=p*w*s*(1-d/100.0);
+	printf("freight=%15.4f\n",f:);
+}
+
+a( : : )
